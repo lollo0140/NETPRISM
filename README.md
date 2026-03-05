@@ -1,4 +1,5 @@
-# .NET PRISM FRAMEWORK Template
+# NET PRISM (.NET + SVELTE) WINDOWS
+## .NET PRISM FRAMEWORK Template
 
 A modern template for creating Desktop applications using **.NET (C#)** for the backend and **Svelte 5 + Vite** for the user interface, via WebView2.
 
