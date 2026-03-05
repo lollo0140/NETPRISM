@@ -28,6 +28,7 @@ namespace App
 
             BrowserWindow mainWindow = new BrowserWindow(new BrowserWindowSettings
             {
+                WindowTitle = ".NET PRISM demo",
                 HTMLPath = _htmlPath,
                 WindowStyle = BrowserWindow.NoTitleStyle,
                 WindowIcon = new Icon(Path.Combine(projPath, "NETPRISM.ico")),

@@ -23,6 +23,8 @@ namespace MyApp
 
             window.WebView.CoreWebView2.Navigate(path);
 
+            window.ReloadPage();
+
             window.Window!.Opacity = 1;
         }
 
