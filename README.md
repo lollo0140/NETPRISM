@@ -1,40 +1,40 @@
 # .NET PRISM FRAMEWORK Template
 
-Un template moderno per creare applicazioni Desktop utilizzando **.NET (C#)** per il backend e **Svelte 5 + Vite** per l'interfaccia utente, tramite WebView2.
+A modern template for creating Desktop applications using **.NET (C#)** for the backend and **Svelte 5 + Vite** for the user interface, via WebView2.
 
-## Struttura del Progetto
+## Project Structure
 
-- `/backend`: Logica C# esposta al frontend via bridge.
-- `/frontend/src`: Codice sorgente Svelte (Vite).
-- `/frontend/baked`: File compilati pronti per essere caricati nel `BrowserWindow`.
+- `/backend`: C# logic exposed to the frontend via bridge.
+- `/frontend/src`: Svelte source code (Vite).
+- `/frontend/baked`: Compiled files ready to be loaded into the `BrowserWindow`.
 
-## Prerequisiti
+## Prerequisites
 
 - [.NET SDK 10+](https://dotnet.microsoft.com/download)
-- [Node.js](https://nodejs.org/) (per la build del frontend)
-- [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) (già presente in Windows 10/11)
+- [Node.js](https://nodejs.org/) (for frontend build)
+- [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) (pre-installed on Windows 10/11)
 
-## Come Iniziare
+## Getting Started
 
-1.  **Installa le dipendenze frontend**:
+1.  **Install frontend dependencies**:
     ```bash
     cd frontend/src
     npm install
     ```
 
-2.  **Avvia il progetto**:
-    Apri il file `.sln` con Visual Studio o esegui:
+2.  **Run the project**:
+    Open the `.sln` file with Visual Studio or run:
     ```bash
     dotnet run
     ```
 
-## Caratteristiche
+## Features
 
-- **Auto-Rebuild**: Quando avvi l'app in modalità DEBUG, .NET esegue automaticamente `npm run build` se abilitato in `Program.cs`.
-- **Single File UI**: Il frontend viene compilato in un unico file HTML per facilità di distribuzione.
-- **Bridge C#/JS**: Chiama metodi C# direttamente da Svelte usando l'oggetto `bridge`.
+- **Auto-Rebuild**: When running the app in DEBUG mode, .NET automatically executes `npm run build` if enabled in `Program.cs`.
+- **Single File UI**: The frontend is compiled into a single HTML file for easy distribution.
+- **C#/JS Bridge**: Call C# methods directly from Svelte using the `bridge` object.
 
-## Configurazione
+## Configuration
 
-- Per nascondere la console dell'eseguibile, cambia `WinTools.WinTools.SetShowConsole(false);` in `backend/main.cs`.
-- Per disabilitare il rebuild automatico, imposta `bool rebuildUI = false;` in `Program.cs`.
+- To hide the executable console, change `WinTools.WinTools.SetShowConsole(false);` in `backend/main.cs`.
+- To disable automatic rebuild, set `bool rebuildUI = false;` in `Program.cs`.
