@@ -30,10 +30,11 @@ namespace App
             {
                 WindowTitle = ".NET PRISM demo",
                 HTMLPath = _htmlPath,
-                WindowStyle = BrowserWindow.NoTitleStyle,
+                WindowStyle = BrowserWindow.DefaultStyle,
                 WindowIcon = new Icon(Path.Combine(projPath, "NETPRISM.ico")),
                 MinHeight = 400,
                 MinWidht = 650, 
+                CanClose = true
             }, bridge: new Invokable());
 
 
@@ -51,7 +52,6 @@ namespace App
 
             //change the value of this line to hide or show the console when executed by the exe file.
             WinTools.WinTools.SetShowConsole(false);
-
 
 
             //ipc test

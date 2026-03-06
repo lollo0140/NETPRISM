@@ -118,7 +118,6 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        border: 1px solid #25252b;
         box-sizing: border-box;
 
         border-radius: 15px;
