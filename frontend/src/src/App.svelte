@@ -6,6 +6,7 @@
     let date = $state(""); 
 
     let logs = $state([
+        "welcome to .NETPRISM",
         "PRISM Engine v1.0.4 initialized",
         "Secure bridge established with .NET Host",
         "Listening for IPC handles...",
@@ -29,6 +30,7 @@
     }
 
 </script>
+
 
 <main>
     <!-- svelte-ignore a11y_no_static_element_interactions -->

@@ -8,29 +8,10 @@ namespace MyApp
 {
     public class Program
     {
-
-
-        //use the file main.cs in the backend folder as starting point
-        //make changes here only if you need to change startup behevior
-
-        static string GetSourceDirectory([CallerFilePath] string path = "") => Path.GetDirectoryName(path)!;
-
-        //thes functions will start the command 'npm run build' to rebuild the interface
-        public static void reloadUI(BrowserWindow window, string path)
+        
+        public static async void startServerNPM(string path)
         {
-            window.Window!.Opacity = 0.5;
-            buildUI();
-
-            window.WebView.CoreWebView2.Navigate(path);
-
-            window.ReloadPage();
-
-            window.Window!.Opacity = 1;
-        }
-
-        public static void buildUI()
-        {
-            string command = $"/c cd /d \"{Path.Combine(GetSourceDirectory(), "frontend/src")}\" && npm run build";
+            string command = $"/c cd /d \"{path}\" && npm run dev";
 
             Process.Start(new ProcessStartInfo
             {
@@ -38,10 +19,14 @@ namespace MyApp
                 Arguments = command,
                 CreateNoWindow = false,
                 UseShellExecute = false
-            })?.WaitForExit();
+            });
         }
 
 
+        //use the file main.cs in the backend folder as starting point
+        //make changes here only if you need to change startup behevior
+
+        static string GetSourceDirectory([CallerFilePath] string path = "") => Path.GetDirectoryName(path)!;
 
         [STAThread]
         static void Main(string[] args)
@@ -52,11 +37,6 @@ namespace MyApp
 #if DEBUG
             //default vite will rebuild the frontend
             //you change this value if you want to turn off this function
-            bool rebuildUI = true;
-            if (rebuildUI)
-            {
-                buildUI();
-            }
             System.Console.WriteLine("-----------App starting-----------");
 #endif
             App.App.main(GetSourceDirectory());
