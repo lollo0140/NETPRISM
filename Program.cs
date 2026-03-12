@@ -32,7 +32,9 @@ namespace MyApp
         static void Main(string[] args)
         {
 
+#if DEBUG
             Console.Clear();
+#endif
 
 #if DEBUG
             //default vite will rebuild the frontend

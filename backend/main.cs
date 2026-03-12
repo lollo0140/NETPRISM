@@ -48,7 +48,7 @@ namespace App
 
 
             //change the value of this line to hide or show the console when executed by the exe file.
-            WinTools.WinTools.SetShowConsole(false);
+            //WinTools.WinTools.SetShowConsole(false);
 
 
             //ipc test
